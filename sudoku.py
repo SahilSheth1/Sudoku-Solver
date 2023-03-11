@@ -32,3 +32,22 @@ def possibleSolution(row, column, number):
                 return False
             
     return True
+
+def solvePuzzle():
+    global grid
+    
+    for row in range(0, 9):
+        for column in range(0, 9):
+            if grid[row][column] == 0:
+                for number in range(1, 10):
+                    if possibleSolution(row, column, number):
+                        grid[row][column] = number
+                        solvePuzzle()
+                        grid[row][column] = 0
+                
+                return
+    
+    print(np.matrix(grid))
+    input("For more possible solutions, click enter: ")
+    
+solvePuzzle()
