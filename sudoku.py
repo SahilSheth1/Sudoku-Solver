@@ -22,3 +22,13 @@ def possibleSolution(row, column, number):
     for y in range(0, 9):
         if grid[y][column] == number:
             return False
+        
+    x0 = (row // 3) * 3
+    y0 = (column // 3) * 3
+    
+    for x in range(0, 3):
+        for y in range(0, 3):
+            if grid[x0 + x][y0 + y] == number:
+                return False
+            
+    return True
