@@ -11,3 +11,14 @@ grid = [[0, 6, 8, 0, 0, 0, 9, 3, 0],
         [4, 7, 3, 0, 5, 2, 0, 0, 9]]
 
 print(np.matrix(grid))
+
+def possibleSolution(row, column, number):
+    global grid
+    
+    for x in range(0, 9):
+        if grid[row][x] == number:
+            return False
+        
+    for y in range(0, 9):
+        if grid[y][column] == number:
+            return False
