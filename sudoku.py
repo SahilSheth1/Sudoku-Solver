@@ -10,7 +10,10 @@ grid = [[0, 6, 8, 0, 0, 0, 9, 3, 0],
         [8, 5, 0, 0, 4, 0, 7, 6, 0],
         [4, 7, 3, 0, 5, 2, 0, 0, 9]]
 
+print("Given Puzzle: \n")
+print("'0' is equivalent to blank spots \n")
 print(np.matrix(grid))
+print("\n")
 
 def possibleSolution(row, column, number):
     global grid
@@ -46,8 +49,7 @@ def solvePuzzle():
                         grid[row][column] = 0
                 
                 return
-    
+    print("Solution to Puzzle: \n")
     print(np.matrix(grid))
-    input("For more possible solutions, click enter: ")
     
 solvePuzzle()
